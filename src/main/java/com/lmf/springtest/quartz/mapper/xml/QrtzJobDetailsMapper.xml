@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lmf.springtest.quartz.mapper.QrtzJobDetailsMapper">
+    <resultMap id="BaseResultMap" type="com.lmf.springtest.quartz.entity.QrtzJobDetails">
+        <!--@Table -->
+        <result property="jobName" column="JOB_NAME" jdbcType="VARCHAR"/>
+        <result property="jobGroup" column="JOB_GROUP" jdbcType="VARCHAR"/>
+        <result property="description" column="DESCRIPTION" jdbcType="VARCHAR"/>
+        <result property="jobClassName" column="JOB_CLASS_NAME" jdbcType="VARCHAR"/>
+        <result property="schedName" column="SCHED_NAME" jdbcType="VARCHAR"/>
+        <result property="isDurable" column="IS_DURABLE" jdbcType="VARCHAR"/>
+        <result property="isNonconcurrent" column="IS_NONCONCURRENT" jdbcType="VARCHAR"/>
+        <result property="isUpdateData" column="IS_UPDATE_DATA" jdbcType="VARCHAR"/>
+        <result property="requestsRecovery" column="REQUESTS_RECOVERY" jdbcType="VARCHAR"/>
+        <result property="jobData" column="JOB_DATA" jdbcType="VARCHAR"/>
+    </resultMap>
+    
+    <select id="getJobAndTriggerDetails" resultMap="BaseResultMap">
+        select *
+        from qrtz_job_details
+    </select>
+</mapper>
+

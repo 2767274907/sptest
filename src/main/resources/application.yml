@@ -1,0 +1,30 @@
+ftp:
+  ftpIp: 127.0.0.1
+  ftpUser: hcftp
+  ftpPwd: T6HBoWreiTUR
+  ftpPort: 6069
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 500MB
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      initial-size: 3
+      max-active: 10
+      max-wait: 60000
+      min-idle: 3
+      password: 123456
+      url: jdbc:mysql://127.0.0.1:3306/testdatabase?characterEncoding=utf8&useSSL=false&autoReconnect=true&serverTimezone=UTC
+      username: root
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  configuration:
+    cache-enabled: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:com/lmf/springtest/**/mapper/*.xml
+server:
+  port: 8080
+
